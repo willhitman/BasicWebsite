@@ -1,0 +1,15 @@
+nav{
+    
+    display: flex;
+    background-color: rgb(255, 38, 0);
+    color: #06f3f3;
+}
+#main{
+    display: flexbox;
+    align-content: center;
+}
+.cls{
+    align-self: center;
+    color: rgb(237, 245, 237);
+}
+
