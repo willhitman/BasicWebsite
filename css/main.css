@@ -25,8 +25,12 @@ header{
 .card{
     padding-top: 10px;
     padding-bottom: 10px;
-    align-items: center;
+    text-align: justify;
+    align-content: center;
+   
+    
 }
+
 
 /*adding some paralla to the home page and prolly all pages*/
 body,html{
@@ -46,6 +50,7 @@ body,html{
     background-size: cover;
     
 }
+
 /*
     adding some color to the text in the parrallax
 */
@@ -68,3 +73,7 @@ body,html{
 /*
     end
 */
+.btn{
+    color:rgb(255, 94, 0);
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black; 
+}
