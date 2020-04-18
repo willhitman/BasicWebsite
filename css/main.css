@@ -12,4 +12,59 @@ nav{
     align-self: center;
     color: rgb(237, 245, 237);
 }
+.container{
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+header{
+    padding-top: 5px;
+}
+.navbar{
+    padding-top: 5px;
+}
+.card{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    align-items: center;
+}
 
+/*adding some paralla to the home page and prolly all pages*/
+body,html{
+    height: 100%;
+}
+.parallax{
+    /*image*/
+    background-image: url('../images/back.jpg');
+
+    /* has to fill up the entire view*/
+    height: 93%;
+
+    /*creating the scrolling magic*/
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+/*
+    adding some color to the text in the parrallax
+*/
+.parallax{
+    padding-top: 25%;
+    text-align: center;
+    color: red;
+}
+.co{
+    font-family: 'Vollkorn', serif;
+    font-size: 60px;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+.cap{
+    font-family: 'Vollkorn', serif;
+    font-size: 30px;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+   ;
+}
+/*
+    end
+*/
