@@ -32,7 +32,7 @@ header{
 }
 
 
-/*adding some paralla to the home page and prolly all pages*/
+/*adding some parallax to the home page and prolly all pages*/
 body,html{
     height: 100%;
 }
@@ -59,6 +59,48 @@ body,html{
     text-align: center;
     color: red;
 }
+
+
+/*##########################################################################*/
+/*Second parallax effect*/
+.parallax2{
+    /*image*/
+    background-image: url('../images/back2.jpg');
+    /* has to fill up the entire view*/
+    height: 10%;
+    position: relative;
+    opacity: 0.75;
+    /*creating the scrolling magic*/
+    margin-bottom: 2px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+
+/*
+    adding some color to the text in the parrallax
+*/
+.parallax2{
+    padding-top: 20%;
+    text-align: center;
+    color: red;
+}
+.content_section{
+    position: absolute;
+    left: 0;
+    top:10%;
+    width: 100%;
+    text-align: center;
+    color: red;
+}
+.large_text{
+    font-size: 50px;
+    font-family: 'Titillium Web', sans-serif;
+}
+/*#####################################################################*/
+
 .co{
     font-family: 'Vollkorn', serif;
     font-size: 60px;
@@ -76,4 +118,32 @@ body,html{
 .btn{
     color:rgb(255, 94, 0);
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black; 
+}
+.cont{
+    margin: auto;
+    position: relative;
+    color: rgb(252, 0, 0);
+    text-align: center;
+    padding: 10px 10px;
+    text-align: justify;
+    border: solid;
+    border-width: 1px;
+    border-radius: 20px;
+    border-color: rgb(255, 38, 0);
+    background-color:rgb(247, 171, 186);
+    width: 80%;
+}
+.testmonials{
+    position: relative;
+    border: solid;
+    border: 3px;
+    border: red;
+}
+.hella-states{
+    color: red;
+    background-color:rgb(255, 0, 0);
+    text-align: center;
+    padding: 10px 10px;
+    text-align: justify;
+
 }
