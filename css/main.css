@@ -36,6 +36,8 @@ header{
 body,html{
     height: 100%;
 }
+
+
 .parallax{
     /*image*/
     background-image: url('../images/back.jpg');
@@ -48,14 +50,14 @@ body,html{
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    
+    border-radius: 5px;
 }
 
 /*
     adding some color to the text in the parrallax
 */
 .parallax{
-    padding-top: 25%;
+    padding-top: 15%;
     text-align: center;
     color: red;
 }
@@ -67,30 +69,30 @@ body,html{
     /*image*/
     background-image: url('../images/back2.jpg');
     /* has to fill up the entire view*/
-    height: 10%;
+    height: 100%;
     position: relative;
-    opacity: 0.75;
+   
     /*creating the scrolling magic*/
     margin-bottom: 2px;
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    
+    border-radius: 5px;
 }
 
 /*
     adding some color to the text in the parrallax
 */
 .parallax2{
-    padding-top: 20%;
+    padding-top: 5%;
     text-align: center;
     color: red;
 }
 .content_section{
     position: absolute;
     left: 0;
-    top:10%;
+    top:30%;
     width: 100%;
     text-align: center;
     color: red;
@@ -119,25 +121,38 @@ body,html{
     color:rgb(255, 94, 0);
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black; 
 }
-.cont{
+.cont, .cont1, .cont2{
     margin: auto;
     position: relative;
     color: rgb(252, 0, 0);
     text-align: center;
-    padding: 10px 10px;
+    padding: 5px 5px;
     text-align: justify;
     border: solid;
     border-width: 1px;
     border-radius: 20px;
     border-color: rgb(255, 38, 0);
-    background-color:rgb(247, 171, 186);
-    width: 80%;
+    background-color:rgb(233, 116, 140);
+    
 }
+.cont{
+    width: 80%;
+    padding: 1px 1px;
+    text-align: center;
+}
+.cont1{
+    width:40%;
+    padding: 1px 1px;
+    text-align: center;
+}
+
 .testmonials{
+    margin: auto;
     position: relative;
     border: solid;
     border: 3px;
     border: red;
+    width: 80%;
 }
 .hella-states{
     color: red;
@@ -145,5 +160,183 @@ body,html{
     text-align: center;
     padding: 10px 10px;
     text-align: justify;
+    border-radius: 15px;
 
+}
+
+/*##################################parallax 3################################*/
+.parallax3{
+    /*image*/
+    background-image: url('../images/back5.jpg');
+    /* has to fill up the entire view*/
+    height: 11%;
+    position: relative;
+    opacity: 0.75;
+    /*creating the scrolling magic*/
+    margin-bottom: 2px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+
+/*
+    adding some color to the text in the parrallax
+*/
+.parallax3{
+    padding-top: 19%;
+    text-align: center;
+    color: red;
+}
+
+.header1{
+    top: 5%;
+    position: relative;
+    padding: 10px 10px;
+    
+}
+/*##################################parallax 4################################*/
+.parallax4{
+    /*image*/
+    background-image: url('../images/back2.jpg');
+    /* has to fill up the entire view*/
+    height: 15%;
+    position: relative;
+    opacity: 0.75;
+    /*creating the scrolling magic*/
+    margin-bottom: 2px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+
+/*
+    adding some color to the text in the parrallax
+*/
+.parallax4{
+   
+    padding-top: 12%;
+    text-align: center;
+    color: red;
+}
+/*##################################parallax 5################################*/
+.parallax5{
+    /*image*/
+    background-image: url('../images/back3.jpg');
+    /* has to fill up the entire view*/
+    height: 15%;
+    position: relative;
+    opacity: 0.75;
+    /*creating the scrolling magic*/
+    margin-bottom: 2px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+
+/*
+    adding some color to the text in the parrallax
+*/
+.parallax5{
+   
+    padding-top: 30%;
+    text-align: center;
+    color: red;
+}
+.main{
+    text-align: center;
+    text-align: justify;
+}
+tr{
+    text-align: justify;
+}
+.footer_wrapper{
+   
+    
+    margin: auto;
+    text-align: start;
+}
+
+article{
+    text-align: justify;
+    width: 60%;
+    margin: auto;
+}
+.connect{
+    text-align: center;
+    width: 60%;
+    margin: auto;
+}
+hr{
+    width: 80%;
+}
+.red_head{
+    color: red;
+    font-size: 40px;
+}
+.fa-whatsapp{
+    font-size: 35px;
+    color: green;
+}
+.fa-phone{
+    font-size: 35px;
+    color: blue;
+}
+.fa-envelope{
+    font-size: 35px;
+    color: red;
+}
+table{
+    border: none;
+    border-radius: 12px;
+    color:red;
+    margin: 5px auto 5px;
+    width: 100%;
+    border-collapse: collapse;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgb(252, 84, 84);
+   
+}
+.right{
+    border-right:1px solid red;
+}
+
+.bottomm{
+    border-bottom:1px solid red;
+    
+}
+tr td{
+    text-align: center;
+}
+.br_black{
+    background-color: rgb(37, 4, 11);
+    width: 30%;
+    margin: auto;
+    border-radius: 10px;  
+}
+.fa-twitter{
+    font-size: 35px;
+}
+.footer_content p{
+    font-size: 60px;
+}
+.bottom{
+    font-size: 30px;
+   padding-bottom: 10px;
+}
+.cont{
+    font-size: 20px;
+    text-align: center;
+}
+.fa-angle-down, .red{
+    font-size: 35px;
+    color: red;
+}
+html{
+    scroll-behavior: smooth;
 }
