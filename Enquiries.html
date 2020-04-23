@@ -72,6 +72,7 @@
                 let check = 0;
                 var name = document.forms["ME"]["name"].value;
                 let letters = /^[a-zA-Z]+$/;
+                let numberz = /[^0-9]/;
                 if (name==""){
                     alert("Name must not be empty");
                     check = 1;
@@ -97,7 +98,7 @@
                     check =1;
                     return false;
                 }else{
-                    if(number.match(letters)){
+                    if(number.match(numberz)){
                         alert("Your phone number is not valid, must be numbers only");
                         check=1;
                         return false;
