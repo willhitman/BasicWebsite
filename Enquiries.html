@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <form  name ="ME" onsubmit="return false" >
+        <label for="name">Name</label><br>
+        <input type="text" id ="name" name="name" title="Your name"><br>
+        <label for="number">Number</label><br>
+        <input type="text" name="number" title="Your phone number"><br>
+        <label for="email">Email</label><br>
+        <input type="email" name ="email" title="Your email"><br>
+        <label for="memo">Enquiry</label><br>
+        <textarea name="memo" id="" cols="30" rows="8" title="Your enquiry"></textarea><br>
+        <input type="submit" value="Submit" title="Submit Enquiry">
+        
+       <script>
+            function validateMe(){
+                let check = 0;
+                var name = document.forms["ME"]["name"].value;
+                let letters = /^[a-zA-Z]+$/;
+                if (name==""){
+                    alert("Name must not be empty");
+                    check = 1;
+                    return false;
+                    
+                }else{
+                    if(!name.match(letters)){
+                        alert("Name must be Alphabet letters only");
+                        check = 1;
+                        return false;
+
+                    }
+                }
+
+                /* phone number*/
+                let number = document.forms["ME"]["number"].value;
+                if(number == ""){
+                    alert("Number must not be empty");
+                    check =1;
+                    return false;
+                }else{
+                    if(number.match(letters)){
+                        alert("Your phone number is not valid, must be numbers only");
+                        check=1;
+                        return false;
+                    }
+                    
+                }
+                /*email*/
+                let email = document.forms["ME"]["email"].value;
+                if (email==""){
+                    alert("Email must not be empty");
+                    check=1;
+                    return false;
+                }
+
+               /*enquiry*/
+               let enquiry = document.forms["ME"]["memo"].value;
+               if(enquiry == ""){
+                   alert("Enquiry must not be empty");
+                   check=1;
+                   return false;
+               }
+                
+               if(check==0){
+                    alert("Successful");
+                    
+                    //location.reload();
+                    document.name.name.value="";
+                
+                    return false;
+                } 
+                
+
+            }
+          
+            
+            var form = document.forms["ME"];
+            form.onsubmit=validateMe;
+       </script>
+    </form>
+   
+</body>
+</html>
