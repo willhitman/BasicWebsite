@@ -5,19 +5,68 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vowel Inc</title>
+    <!--cdn for bootstrap 4-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!--end of cdn-->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--for google fonts-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Vollkorn|Titillium+Web">
+    <!--my css-->
+    <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-    <form  name ="ME" onsubmit="return false" >
-        <label for="name">Name</label><br>
-        <input type="text" id ="name" name="name" title="Your name"><br>
-        <label for="number">Number</label><br>
-        <input type="text" name="number" title="Your phone number"><br>
-        <label for="email">Email</label><br>
-        <input type="email" name ="email" title="Your email"><br>
-        <label for="memo">Enquiry</label><br>
-        <textarea name="memo" id="" cols="30" rows="8" title="Your enquiry"></textarea><br>
-        <input type="submit" value="Submit" title="Submit Enquiry">
-        
+
+
+    <!--
+        the #header tag# hasa intentionally left out it doesnt matter in this case its naking things rather awkward with
+        the parallax effect
+    -->
+    <div class ="parallax">
+        <h1 class ="co">Vowels</h1>
+        <h3 class = "cap">Welcome to vowels inc, home of deco</h3>
+        <br><br>
+        <a href="#here" class ="red"><i class="fa fa-angle-down"></i><br>scroll down</a>
+</div>
+    <!--navigation bar-->
+    <nav class="navbar navbar-dark justify-content-center">
+        <!-- Navbar content -->
+        <ul id = "list" class ="nav nav-tabs">
+            <li id = "item"class ="nav-item " >
+                <a class = "nav-link  cls"href="#">Home</a>
+            </li>
+            <li class = "nav-item" >
+                <a class="nav-link cls" href="catalogue.html">Catalogue</a>
+            </li>
+            <li class = "nav-item" >
+                <a  class="nav-link cls" href="about.html">About</a>
+            </li>
+            <li class = "nav-item" >
+                <a  class="nav-link active cls" href="Enquiries.html">Enquiries</a>
+            </li>
+        </ul>
+    </nav>
+    <!--end of navigation bar-->
+
+
+    <div class = "container">
+        <form  name ="ME" id ="here" onsubmit="return false" >
+            <label for="name">Name</label><br>
+            <input type="text" id ="name" name="name" title="Your name"><br>
+            <label for="number">Number</label><br>
+            <input type="text" name="number" title="Your phone number"><br>
+            <label for="email">Email</label><br>
+            <input type="text" name ="email" title="Your email"><br>
+            <label for="memo">Enquiry</label><br>
+            <textarea name="memo" id="" cols="30" rows="8" title="Your enquiry"></textarea><br>
+            <input type="submit" value="Submit" title="Submit Enquiry">
+            <!--javascript inline-->
+    </div>
        <script>
             function validateMe(){
                 let check = 0;
@@ -35,6 +84,10 @@
                         return false;
 
                     }
+                    if(name.length < 3){
+                        alert("Your name cannot be less than 3 characters long!");
+                        return false;
+                    }
                 }
 
                 /* phone number*/
@@ -49,6 +102,10 @@
                         check=1;
                         return false;
                     }
+                    if (number.length < 10 || number.document>10){
+                        alert("Number incorrect must be 10 digits, No spaces!\nExample: 0777768018");
+                        return false;
+                    }
                     
                 }
                 /*email*/
@@ -57,6 +114,14 @@
                     alert("Email must not be empty");
                     check=1;
                     return false;
+                }else {
+                    let email_bluep =/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+                    if (!email_bluep.test(email))
+                    {
+                        alert("You have entered an invalid email address!");
+                        return false;
+                    }
+                        
                 }
 
                /*enquiry*/
@@ -65,6 +130,11 @@
                    alert("Enquiry must not be empty");
                    check=1;
                    return false;
+               }else{
+                    if (enquiry.length < 20){
+                        alert("That is not a valid Enquiry, Please add more words to best describe your enquiry\nMinimum of 10 words");
+                        return false;
+                    }
                }
                 
                if(check==0){
@@ -83,6 +153,7 @@
             var form = document.forms["ME"];
             form.onsubmit=validateMe;
        </script>
+        <!--javascript inline end-->
     </form>
    
 </body>
