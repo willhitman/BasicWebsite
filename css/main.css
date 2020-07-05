@@ -124,15 +124,15 @@ body,html{
 .cont, .cont1, .cont2{
     margin: auto;
     position: relative;
-    color: rgb(252, 0, 0);
+    color: rgb(240, 1, 1);
     text-align: center;
     padding: 5px 5px;
     text-align: justify;
-    border: solid;
     border-width: 1px;
     border-radius: 20px;
-    border-color: rgb(255, 38, 0);
-    background-color:rgb(233, 116, 140);
+   
+
+    box-shadow: 5px 5px 20px black;
     
 }
 .cont{
@@ -151,11 +151,11 @@ body,html{
     position: relative;
     border: solid;
     border: 3px;
-    border: red;
+    border: rgb(180, 139, 139);
     width: 80%;
 }
 .hella-states{
-    color: red;
+    color: rgb(133, 108, 108);
     background-color:rgb(255, 0, 0);
     text-align: center;
     padding: 10px 10px;
