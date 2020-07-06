@@ -12,7 +12,8 @@
     <!--for google fonts-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Vollkorn">
     <!--my css-->
-    <link rel="stylesheet" href="css/main.css">
+    
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='main.css')}}">
 
     
 </head>
@@ -32,16 +33,16 @@
             <!-- Navbar content -->
             <ul id = "list" class ="nav nav-tabs">
                 <li id = "item"class ="nav-item " >
-                    <a class = "nav-link cls"href="index.html">Home</a>
+                    <a class = "nav-link cls"href="{{ url_for('home') }}">Home</a>
                 </li>
                 <li class = "nav-item" >
-                    <a class="nav-link  cls" href="catalogue.html">Catalogue</a>
+                    <a class="nav-link  cls" href="{{ url_for('catalogue') }}">Catalogue</a>
                 </li>
                 <li class = "nav-item" >
-                    <a  class="nav-link active cls" href="about.html">About</a>
+                    <a  class="nav-link active cls" href="{{ url_for('about') }}">About</a>
                 </li>
                 <li class = "nav-item" >
-                    <a  class="nav-link cls" href="Enquiries.html">Enquiries</a>
+                    <a  class="nav-link cls" href="{{ url_for('Enquiries') }}">Enquiries</a>
                 </li>
             </ul>
         </nav>

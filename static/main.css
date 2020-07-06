@@ -40,7 +40,7 @@ body,html{
 
 .parallax{
     /*image*/
-    background-image: url('../images/back.jpg');
+    background-image: url('../static/images/back.jpg');
 
     /* has to fill up the entire view*/
     height: 93%;
@@ -67,7 +67,7 @@ body,html{
 /*Second parallax effect*/
 .parallax2{
     /*image*/
-    background-image: url('../images/back2.jpg');
+    background-image: url('../static/images/back2.jpg');
     /* has to fill up the entire view*/
     height: 100%;
     position: relative;
@@ -167,7 +167,7 @@ body,html{
 /*##################################parallax 3################################*/
 .parallax3{
     /*image*/
-    background-image: url('../images/back5.jpg');
+    background-image: url('../static/images/back5.jpg');
     /* has to fill up the entire view*/
     height: 11%;
     position: relative;
@@ -199,7 +199,7 @@ body,html{
 /*##################################parallax 4################################*/
 .parallax4{
     /*image*/
-    background-image: url('../images/back2.jpg');
+    background-image: url('../static/images/back2.jpg');
     /* has to fill up the entire view*/
     height: 15%;
     position: relative;
@@ -225,7 +225,7 @@ body,html{
 /*##################################parallax 5################################*/
 .parallax5{
     /*image*/
-    background-image: url('../images/back3.jpg');
+    background-image: url('../static/images/back3.jpg');
     /* has to fill up the entire view*/
     height: 15%;
     position: relative;
@@ -341,3 +341,7 @@ html{
     scroll-behavior: smooth;
 }
 /*removing increment and decrement buttons on number field*/
+#loginform{
+    max-width: 50%;
+    margin: auto;
+}

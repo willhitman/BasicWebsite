@@ -18,7 +18,7 @@
     <!--for google fonts-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Vollkorn|Titillium+Web">
     <!--my css-->
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='main.css')}}">
 </head>
 <body>
 
@@ -38,24 +38,32 @@
         <!-- Navbar content -->
         <ul id = "list" class ="nav nav-tabs">
             <li id = "item"class ="nav-item " >
-                <a class = "nav-link  cls"href="index.html">Home</a>
+                <a class = "nav-link  cls"href="{{ url_for('home') }}">Home</a>
             </li>
             <li class = "nav-item" >
-                <a class="nav-link cls" href="catalogue.html">Catalogue</a>
+                <a class="nav-link cls" href="{{ url_for('catalogue') }}">Catalogue</a>
             </li>
             <li class = "nav-item" >
-                <a  class="nav-link cls" href="about.html">About</a>
+                <a  class="nav-link cls" href="{{ url_for('about') }}">About</a>
             </li>
             <li class = "nav-item" >
-                <a  class="nav-link active cls" href="Enquiries.html">Enquiries</a>
+                <a  class="nav-link active cls" href="{{ url_for('Enquiries') }}">Enquiries</a>
             </li>
         </ul>
     </nav>
     <!--end of navigation bar-->
-
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+    {% for category, message in messages %}
+    <div class="alert alert-{{ category }}">
+        {{ message }}
+    </div>
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
 
     <div class = "container">
-        <form  name ="ME" id ="here" onsubmit="return false" >
+        <form  method = "POST" action="Enquiries" name ="ME" id ="here" onsubmit="return false" >
             <label for="name">Name</label><br>
             <input type="text" id ="name" name="name" title="Your name"><br>
             <label for="number">Number</label><br>

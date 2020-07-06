@@ -11,10 +11,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!--for google fonts-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Vollkorn|Titillium+Web">
-    <!--my css-->
-    <link rel="stylesheet" href="css/main.css">
 
-    
+   <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='main.css')}}">
 </head>
 <body>
     <!--
@@ -32,16 +30,16 @@
             <!-- Navbar content -->
             <ul id = "list" class ="nav nav-tabs">
                 <li id = "item"class ="nav-item " >
-                    <a class = "nav-link active cls"href="#">Home</a>
+                    <a class = "nav-link active cls"href="{{ url_for('home') }}">Home</a>
                 </li>
                 <li class = "nav-item" >
-                    <a class="nav-link cls" href="catalogue.html">Catalogue</a>
+                    <a class="nav-link cls" href="{{ url_for('catalogue') }}">Catalogue</a>
                 </li>
                 <li class = "nav-item" >
-                    <a  class="nav-link cls" href="about.html">About</a>
+                    <a  class="nav-link cls" href="{{ url_for('about') }}">About</a>
                 </li>
                 <li class = "nav-item" >
-                    <a  class="nav-link cls" href="Enquiries.html">Enquiries</a>
+                    <a  class="nav-link cls" href="{{ url_for('Enquiries') }}">Enquiries</a>
                 </li>
             </ul>
         </nav>
@@ -53,7 +51,7 @@
         <span class = "main" id ="home">
             <div  class="d-flex flex-wrap justify-content-around">
                 <div class="card" style="width: 18rem;">
-                    <img src="images/ceiling.jpg" class="card-img-top" alt="...">
+                    <img src="{{url_for('static',filename='images/ceiling.jpg')}}" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">Wooden Ceilings</h5>
                         <p class="card-text">Nomatter the design of your roof, we have just the right tools and skills to make a ceiling that fits.</p>
@@ -62,7 +60,7 @@
                 </div>
                 
                 <div class="card" style="width: 18rem;">
-                    <img src="images/black_sofa.jpg" class="card-img-top" alt="...">
+                    <img src="{{url_for('static',filename='images/black_sofa.jpg')}}" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">Leaving room</h5>
                         <p class="card-text">We can help you make you leaving room more lively with trending furniture designs.</p>
@@ -71,7 +69,7 @@
                 </div>
 
                 <div class="card" style="width: 18rem;">
-                    <img src="images/door.jpg" class="card-img-top" alt="...">
+                    <img src="{{url_for('static',filename='images/door.jpg')}}" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">Doors</h5>
                         <p class="card-text">Regular doors just serve as security, our doors are all in one, with security and style.</p>
@@ -81,7 +79,7 @@
 
                
                 <div class="card" style="width: 18rem;">
-                    <img src="images/kitchen.jpg" class="card-img-top" alt="...">
+                    <img src="{{url_for('static',filename='images/kitchen.jpg')}}" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">Kitchen</h5>
                         <p class="card-text">Trendy looks that will make the heart of every home amaizing. Wide variety of desings available</p>
@@ -90,7 +88,7 @@
                 </div>
 
                 <div class="card" style="width: 18rem;">
-                    <img src="images/office.jpg" class="card-img-top" alt="...">
+                    <img src="{{url_for('static',filename='images/office.jpg')}}" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">Working space</h5>
                         <p class="card-text">We dont just end our styling at home, feel free to dare us with your office space.</p>
@@ -99,7 +97,7 @@
                 </div>
 
                 <div class="card" style="width: 18rem;">
-                    <img src="images/reup.jpg" class="card-img-top" alt="...">
+                    <img src="{{url_for('static',filename='images/reup.jpg')}}" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">Fixer-upper</h5>
                         <p class="card-text">We have a plan for everyone, repairs, make-overs, painting and varnishing.</p>
