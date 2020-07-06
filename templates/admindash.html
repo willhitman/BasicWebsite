@@ -19,6 +19,8 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Vollkorn|Titillium+Web">
     <!--my css-->
     <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='main.css')}}">
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
     <nav class="navbar navbar-dark bg-dark">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
@@ -38,6 +40,7 @@
     {% endfor %}
     {% endif %}
     {% endwith %}
+    
     {% for use in user %}
     <div class="content" id="inquiry">
         <div class="inqiry">
@@ -46,9 +49,35 @@
             <p class="nname">{{use[2]}}</p>
             <hr>
             <p class="nname">{{use[3]}}</p>
+           
+            <form method="POST" action="{{url_for('reply',in_id=use[5])}}" name="me">
+                
+                <input type="text" name="id" value="{{use[2]}}" hidden>
+                <textarea class="form-control" name="reply" id="" cols="50" rows="10"></textarea> <br>
+                <span>
+                    <button class="btn btn-success" type="submit" > Respond</button><br> <br>
+                    <a href="{{url_for('response',un_id=use[5])}}" class="btn btn-info">View Reply</a>
+                </span>
+
+
+
+                <script language="JavaScript">
+                    function MailTextarea()
+                    {
+                    let inq = document.forms["me"]["reply"].value;
+                    MyAction="mailto:{{use[2]}}?Subject=Reply for your Enquiry, Vowel inc&body=" + inq;
+                    window.location.href = MyAction;
+                    }
+                    var form = document.forms["me"];
+                    form.onsubmit=MailTextarea;
+                </script>
+            </form>
         </div>
     </div>
     {% endfor %}
+
+
+
 </body>
 
 </html>

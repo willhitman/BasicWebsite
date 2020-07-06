@@ -347,16 +347,17 @@ html{
 }
 .inqiry{
     margin: 4px auto;
-    padding: 35px;
     border-radius: 10px;
+    padding: 10px;
     box-shadow: 5px 5px 10px black;
-    width: 60%;
+    width: 80%;
     background-color: rgb(26, 53, 56);
     color: white;
     text-shadow: 5px 5px 12px grey;
 }
 #inquiry{
     margin-top: 20px;
+    margin: auto;
 }
 hr{
     width: 100%;
@@ -368,4 +369,10 @@ hr{
 .nname{
     font-family: 'Vollkorn', sans-serif;
     font-size: 20px;
+}
+#changecolor{
+    color: white;
+}
+textarea{
+    width: 90%;
 }

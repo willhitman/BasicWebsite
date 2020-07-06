@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vowel Inc</title>
+    <!--cdn for bootstrap 4-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!--end of cdn-->
+
+
+    <!-- google fonts cdn -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alegreya|Vollkorn">
+    <!-- end of cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--for google fonts-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Vollkorn|Titillium+Web">
+    <!--my css-->
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='main.css')}}">
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <nav class="navbar navbar-dark bg-dark">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="{{url_for('logout')}}">Logout</a>
+            </li>
+        </ul>
+    </nav>
+</head>
+
+<body>
+    
+    <div class="content">
+        <div class="inqiry">
+            <p class="nname">{{res[4]}}</p>
+            </div>
+    </div>
+  
+
+
+
+</body>
+
+</html>

@@ -36,6 +36,12 @@ def Enquiries():
         email = inquiry['email']
         enquir = inquiry['memo']
         cur = mysql.connection.cursor()
+        cur.execute("SELECT * FROM users WHERE enquiry = %s",(enquir,))
+        check = cur.fetchone()
+        cur.close()
+        if check:
+            flash("Enquiry already exist","info")
+            return redirect(url_for('Enquiries'))
         cur.execute("INSERT INTO users(name,number,email,enquiry) VALUES(%s, %s, %s, %s)",(name,number,email,enquir))
         mysql.connection.commit()
         cur.close()
@@ -50,6 +56,7 @@ def login():
         cur = mysql.connection.cursor()
         cur.execute("SELECT * FROM user WHERE email= %s AND password = %s" ,(email,password,))
         user = cur.fetchone()
+        cur.close()
         if user :
             session['loggedin'] = True
             session['id'] = user[0]
@@ -61,16 +68,53 @@ def login():
     return render_template('adminlogin.html')
 
 
-@app.route('/enquirieslist')
+@app.route('/enquirieslist',methods =['GET'])
 def enquirieslist():
     if 'loggedin' in session:
         cur = mysql.connection.cursor()
         cur.execute("SELECT * FROM users")
         user = cur.fetchall()
+        cur.close()
         return render_template('admindash.html', user=user)
     else:
         flash("you need to login first","success")
         return redirect(url_for('login'))
+
+
+@app.route('/reply<int:in_id>',methods=['GET','POST'])
+def reply(in_id):
+    if 'loggedin' in session:
+        if request.method == "POST":
+            reply = request.form.get('reply')
+            if reply:
+                cur = mysql.connection.cursor()
+                cur.execute("UPDATE users SET reply=%s WHERE id = %s",(reply,in_id,))
+                mysql.connection.commit()
+                cur.close()
+                flash("REPLY SUCCESSFUL Redirecting... TO OPEN YOUR MAIL APP","success")
+                return redirect(url_for('enquirieslist'))
+        return redirect(url_for('enquirieslist'))
+    else:
+        flash("you need to login first","success")
+        return redirect(url_for('login'))
+
+
+
+@app.route('/response<int:un_id>',methods =['GET','POST'])
+def response(un_id):
+    if 'loggedin' in session:
+        cur = mysql.connection.cursor()
+        cur.execute("SELECT * FROM users WHERE id =%s",(un_id,))
+        res = cur.fetchone()
+        cur.close()
+        if res[4]:
+            return render_template('reply.html', res=res)
+        else:
+            flash("No reply found for this Enquiry","info")
+            return redirect(url_for('enquirieslist'))
+    else:
+        flash("you need to login first","success")
+        return redirect(url_for('login'))  
 
 @app.route('/logout')
 def logout():
