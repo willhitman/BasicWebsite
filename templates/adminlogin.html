@@ -15,6 +15,15 @@
     <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='main.css')}}">
 </head>
 <body>
+  {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+      {% for category, message in messages %}
+        <div class = "alert alert-{{ category }}">
+            {{ message }}
+        </div>
+      {% endfor %}
+    {% endif %}
+  {% endwith %}
     <div class="content" id = "loginform">
         <form  method = "POST" action="{{url_for('login')}}" autocomplete="off">
             <div class="form-group">

@@ -1,4 +1,4 @@
-from flask import Flask,render_template,url_for,request,redirect
+from flask import Flask,render_template,url_for,request,redirect,session,flash
 from flask_mysqldb import MySQL
 import yaml
 app = Flask(__name__)
@@ -51,15 +51,33 @@ def login():
         cur.execute("SELECT * FROM user WHERE email= %s AND password = %s" ,(email,password,))
         user = cur.fetchone()
         if user :
+            session['loggedin'] = True
+            session['id'] = user[0]
+            session['EMAIL'] = user[1]
             return redirect(url_for('enquirieslist'))
-            
+        else:
+            flash("Incorrect details, Please retry","danger")
+            pass
     return render_template('adminlogin.html')
 
 
 @app.route('/enquirieslist')
 def enquirieslist():
-    return'''<h1>We are in Boys</h1>'''
+    if 'loggedin' in session:
+        cur = mysql.connection.cursor()
+        cur.execute("SELECT * FROM users")
+        user = cur.fetchall()
+        return render_template('admindash.html', user=user)
+    else:
+        flash("you need to login first","success")
+        return redirect(url_for('login'))
 
+@app.route('/logout')
+def logout():
+   session.pop('loggedin', None)
+   session.pop('id', None)
+   session.pop('username', None)
+   return redirect(url_for('login'))
 
 if __name__ == '__main__':
     app.run(debug=True)
