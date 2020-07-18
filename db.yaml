@@ -1,4 +1,2 @@
-mysql_host: 'localhost'
-mysql_user: 'root'
-mysql_password: '0778914641gifted@23'
-mysql_db: 'mydb'
+my_db: 'sqlite:///admin.db'
+app_secret: '7c0d5223a0809d6e3b31b714ec5a6a53'

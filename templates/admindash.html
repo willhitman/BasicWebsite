@@ -44,19 +44,19 @@
     {% for use in user %}
     <div class="content" id="inquiry">
         <div class="inqiry">
-            <p class="nname">{{use[0]}}</p>
-            <p class="nname">{{use[1]}}</p>
-            <p class="nname">{{use[2]}}</p>
+            <p class="nname">{{use.name}}</p>
+            <p class="nname">{{use.number}}</p>
+            <p class="nname">{{use.email}}</p>
             <hr>
-            <p class="nname">{{use[3]}}</p>
+            <p class="nname">{{use.inquiry}}</p>
            
-            <form method="POST" action="{{url_for('reply',in_id=use[5])}}" name="me">
+            <form method="POST" action="{{url_for('reply',in_id=use.id)}}" name="me">
                 
-                <input type="text" name="id" value="{{use[2]}}" hidden>
+                <input type="text" name="id" value="{{use.name}}" hidden>
                 <textarea class="form-control" name="reply" id="" cols="50" rows="10"></textarea> <br>
-                <span>
+                <span>••••••••••••
                     <button class="btn btn-success" type="submit" > Respond</button><br> <br>
-                    <a href="{{url_for('response',un_id=use[5])}}" class="btn btn-info">View Reply</a>
+                    <a href="{{url_for('response',un_id=use.id)}}" class="btn btn-info">View Reply</a>
                 </span>
 
 

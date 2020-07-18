@@ -25,7 +25,7 @@
     {% endif %}
   {% endwith %}
     <div class="content" id = "loginform">
-        <form  method = "POST" action="{{url_for('login')}}" autocomplete="off">
+        <form  method = "POST" action="{{url_for('createaccount')}}" autocomplete="off">
             <div class="form-group">
               <label for="exampleInputEmail1">Email address</label>
               <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" autocomplete="off">
@@ -39,7 +39,6 @@
               <label class="form-check-label" for="exampleCheck1">Check me out</label>
             </div> -->
             <button type="submit" class="btn btn-primary">Submit</button>
-            <p><a href="{{url_for('createaccount')}}">Create Account Now</a></p>
           </form>
     </div>
 </body>
