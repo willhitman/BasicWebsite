@@ -346,3 +346,9 @@ tr td{
 html{
     scroll-behavior: smooth;
 }
+.inquiries{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr) ;
+    text-align: justify;
+   
+}

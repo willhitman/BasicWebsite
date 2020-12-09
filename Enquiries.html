@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    
+
 
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vowel Inc</title>
     <!--cdn for bootstrap 4-->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <!--end of cdn-->
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -20,6 +22,7 @@
     <!--my css-->
     <link rel="stylesheet" href="css/main.css">
 </head>
+
 <body>
 
 
@@ -27,179 +30,192 @@
         the #header tag# hasa intentionally left out it doesnt matter in this case its naking things rather awkward with
         the parallax effect
     -->
-    <div class ="parallax">
-        <h1 class ="co">Vowels</h1>
-        <h3 class = "cap">Welcome to vowels inc, home of deco</h3>
+    <div class="parallax">
+        <h1 class="co">Vowels</h1>
+        <h3 class="cap">Welcome to vowels inc, home of deco</h3>
         <br><br>
-        <a href="#here" class ="red"><i class="fa fa-angle-down"><br>scroll down</i></a>
-</div>
+        <a href="#here" class="red"><i class="fa fa-angle-down"><br>scroll down</i></a>
+    </div>
     <!--navigation bar-->
     <nav class="navbar navbar-dark justify-content-center">
         <!-- Navbar content -->
-        <ul id = "list" class ="nav nav-tabs">
-            <li id = "item"class ="nav-item " >
-                <a class = "nav-link  cls"href="index.html">Home</a>
+        <ul id="list" class="nav nav-tabs">
+            <li id="item" class="nav-item ">
+                <a class="nav-link  cls" href="index.html">Home</a>
             </li>
-            <li class = "nav-item" >
+            <li class="nav-item">
                 <a class="nav-link cls" href="catalogue.html">Catalogue</a>
             </li>
-            <li class = "nav-item" >
-                <a  class="nav-link cls" href="about.html">About</a>
+            <li class="nav-item">
+                <a class="nav-link cls" href="about.html">About</a>
             </li>
-            <li class = "nav-item" >
-                <a  class="nav-link active cls" href="Enquiries.html">Enquiries</a>
+            <li class="nav-item">
+                <a class="nav-link active cls" href="Enquiries.html">Enquiries</a>
             </li>
         </ul>
     </nav>
     <!--end of navigation bar-->
 
 
-    <div class = "container">
-        <form  name ="ME" id ="here" onsubmit="return false" >
+    <div class="container inquiries">
+        <form name="ME" id="here" onsubmit="return false">
             <label for="name">Name</label><br>
-            <input type="text" id ="name" name="name" title="Your name"><br>
+            <input type="text" id="name" name="name" title="Your name"><br>
             <label for="number">Number</label><br>
             <input type="text" name="number" title="Your phone number"><br>
             <label for="email">Email</label><br>
-            <input type="text" name ="email" title="Your email"><br>
+            <input type="text" name="email" title="Your email"><br>
             <label for="memo">Enquiry</label><br>
             <textarea name="memo" id="" cols="30" rows="8" title="Your enquiry"></textarea><br>
             <input type="submit" value="Submit" title="Submit Enquiry">
             <!--javascript inline-->
-    </div>
-       <script>
-            function validateMe(){
-                let check = 0;
-                var name = document.forms["ME"]["name"].value;
-                let letters = /^[a-zA-Z]+$/;
-                let numberz = /[^0-9]/;
-                if (name==""){
-                    alert("Name must not be empty");
-                    check = 1;
-                    return false;
-                    
-                }else{
-                    if(!name.match(letters)){
-                        alert("Name must be Alphabet letters only");
+
+            <script>
+                function validateMe() {
+                    let check = 0;
+                    var name = document.forms["ME"]["name"].value;
+                    let letters = /^[a-zA-Z]+$/;
+                    let numberz = /[^0-9]/;
+                    if (name == "") {
+                        alert("Name must not be empty");
                         check = 1;
                         return false;
 
+                    } else {
+                        if (!name.match(letters)) {
+                            alert("Name must be Alphabet letters only");
+                            check = 1;
+                            return false;
+
+                        }
+                        if (name.length < 3) {
+                            alert("Your name cannot be less than 3 characters long!");
+                            return false;
+                        }
                     }
-                    if(name.length < 3){
-                        alert("Your name cannot be less than 3 characters long!");
+
+                    /* phone number*/
+                    let number = document.forms["ME"]["number"].value;
+                    if (number == "") {
+                        alert("Number must not be empty");
+                        check = 1;
+                        return false;
+                    } else {
+                        if (number.match(numberz)) {
+                            alert("Your phone number is not valid, must be numbers only");
+                            check = 1;
+                            return false;
+                        }
+                        if (number.length < 10 || number.document > 10) {
+                            alert("Number incorrect must be 10 digits, No spaces!\nExample: 0777768018");
+                            return false;
+                        }
+
+                    }
+                    /*email*/
+                    let email = document.forms["ME"]["email"].value;
+                    if (email == "") {
+                        alert("Email must not be empty");
+                        check = 1;
+                        return false;
+                    } else {
+                        let email_bluep = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+                        if (!email_bluep.test(email)) {
+                            alert("You have entered an invalid email address!");
+                            return false;
+                        }
+
+                    }
+
+                    /*enquiry*/
+                    let enquiry = document.forms["ME"]["memo"].value;
+                    if (enquiry == "") {
+                        alert("Enquiry must not be empty");
+                        check = 1;
+                        return false;
+                    } else {
+                        if (enquiry.length < 20) {
+                            alert("That is not a valid Enquiry, Please add more words to best describe your enquiry\nMinimum of 10 words");
+                            return false;
+                        }
+                    }
+
+                    if (check == 0) {
+                        alert("Successful");
+
+                        //location.reload();
+                        document.name.name.value = "";
+
                         return false;
                     }
+
+
                 }
 
-                /* phone number*/
-                let number = document.forms["ME"]["number"].value;
-                if(number == ""){
-                    alert("Number must not be empty");
-                    check =1;
-                    return false;
-                }else{
-                    if(number.match(numberz)){
-                        alert("Your phone number is not valid, must be numbers only");
-                        check=1;
-                        return false;
-                    }
-                    if (number.length < 10 || number.document>10){
-                        alert("Number incorrect must be 10 digits, No spaces!\nExample: 0777768018");
-                        return false;
-                    }
-                    
-                }
-                /*email*/
-                let email = document.forms["ME"]["email"].value;
-                if (email==""){
-                    alert("Email must not be empty");
-                    check=1;
-                    return false;
-                }else {
-                    let email_bluep =/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-                    if (!email_bluep.test(email))
-                    {
-                        alert("You have entered an invalid email address!");
-                        return false;
-                    }
-                        
-                }
 
-               /*enquiry*/
-               let enquiry = document.forms["ME"]["memo"].value;
-               if(enquiry == ""){
-                   alert("Enquiry must not be empty");
-                   check=1;
-                   return false;
-               }else{
-                    if (enquiry.length < 20){
-                        alert("That is not a valid Enquiry, Please add more words to best describe your enquiry\nMinimum of 10 words");
-                        return false;
-                    }
-               }
-                
-               if(check==0){
-                    alert("Successful");
-                    
-                    //location.reload();
-                    document.name.name.value="";
-                
-                    return false;
-                } 
-                
+                var form = document.forms["ME"];
+                form.onsubmit = validateMe;
+            </script>
+            <!--javascript inline end-->
+        </form>
+        <div class="sidenotes">
+            <h4 class="red_head">We will be with you in a jiffy!</h4>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, at? Labore qui illo soluta at dicta, ducimus, similique fugiat dolore ut consequatur ullam. Officiis quia dolore accusamus excepturi, explicabo facere.
+            Corporis, optio quas voluptas laborum ab voluptatem odit, facilis, ipsa dolorem voluptate repellendus deserunt! Libero placeat sequi inventore similique hic quam saepe temporibus animi. Impedit saepe sint earum accusamus labore.
+            Voluptatem ad voluptatum id, molestiae fuga sint vel natus hic asperiores mollitia, perspiciatis consequuntur at, dolor similique eos est dolorum sit beatae quas non.
+            </p>
+            <h4 class="red_head">Don't worry </h4>
+            <p >Qui aliquam amet fugit dolore architecto?
+                Quis soluta, fugit molestias sit dicta repellendus eaque atque beatae ipsum. Veritatis nemo dignissimos mollitia ducimus dolorem eveniet deserunt accusantium fugit, adipisci quod ipsum architecto similique vero repellat facilis fugiat.
+                Qui quas autem aliquid, excepturi dolor nihil reiciendis error ex consectetur recusandae accusantium nisi quidem in veritatis aliquam quis officiis, eos nesciunt voluptate repellat reprehenderit eius temporibus ullam! Quos, quas!</p>
+        </div>
+    </div>
+    </div>
+    <div class="parallax2">
 
-            }
-          
-            
-            var form = document.forms["ME"];
-            form.onsubmit=validateMe;
-       </script>
-        <!--javascript inline end-->
-    </form>
-   
-    <div class ="parallax2">
-            
-        <div id = "footer_content">
-            <div class = "testmonials" >
+        <div id="footer_content">
+            <div class="testmonials">
 
-                <h3 class = "co">What we do</h3>
-               
-                    <div class = "cont">
-                        <p class ="cont-text">
-                            At the heart of the furniture industry 
-                            with a design and customer centric approach. Whether its a dream home or possibly a couch you 
-                            saw in a movie and liked we will bring it life according to your budget and requirements
-                        </p>
-                    </div>
-              
-                
+                <h3 class="co">What we do</h3>
+
+                <div class="cont">
+                    <p class="cont-text">
+                        At the heart of the furniture industry
+                        with a design and customer centric approach. Whether its a dream home or possibly a couch you
+                        saw in a movie and liked we will bring it life according to your budget and requirements
+                    </p>
+                </div>
+
+
             </div>
-             <h1 class = "co">Contact Details</h1>
-             <p class = "br_black">
-                 <span>
-                     <i class="fa fa-envelope"></i> <br>
-                     <a href="mailto:giftwt9wt@gmail.com" class ="btn btn-secondary">Email 1</a><br>
-                 </span>
-                 
-                 <span>
-                     <i class="fa fa-envelope"></i><br>
-                     <a href="mailto:ruwendegiftwillard@gmail.com"class = "btn btn-secondary">Email 2</a><br>
-                 </span>
-                 <span>
-                     <i class = "fa fa-phone"></i>
-                     +263 777 768 018
-                 </span>
-                 <br>
-                 <br>
-                 <span>
-                     <a href="https://twitter.com/taken_by_code" target="black" title="follow me on twitter"><i class = "fa fa-twitter"></i></a>
-                 </span>
-             </p>
-             
-             
-            
-         </div>
-         <p class = "bottom co"> <b> Copyright &copy Gift W. T. Ruwende, H. I. T. APRIL 2020</b></p>
+            <h1 class="co">Contact Details</h1>
+            <p class="br_black">
+                <span>
+                    <i class="fa fa-envelope"></i> <br>
+                    <a href="mailto:giftwt9wt@gmail.com" class="btn btn-secondary">Email 1</a><br>
+                </span>
+
+                <span>
+                    <i class="fa fa-envelope"></i><br>
+                    <a href="mailto:ruwendegiftwillard@gmail.com" class="btn btn-secondary">Email 2</a><br>
+                </span>
+                <span>
+                    <i class="fa fa-phone"></i>
+                    +263 777 768 018
+                </span>
+                <br>
+                <br>
+                <span>
+                    <a href="https://twitter.com/taken_by_code" target="black" title="follow me on twitter"><i
+                            class="fa fa-twitter"></i></a>
+                </span>
+            </p>
+
+
+
+        </div>
+        <p class="bottom co"> <b> Copyright &copy Gift W. T. Ruwende, H. I. T. APRIL 2020</b></p>
     </div>
 </body>
+
 </html>
